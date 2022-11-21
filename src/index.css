@@ -1,0 +1,67 @@
+body {
+    margin: 0;
+    font-family: Tahoma, sans-serif;
+}
+
+.App {
+    margin: 10px;
+}
+
+.value {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+
+.toChange {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+}
+
+.toChange > h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.buttons--other {
+    margin-top: 10px;
+}
+
+.toLoad {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    border-radius: 10px;
+}
+
+.toLoad > Button {
+    margin: 15px;
+}
+
+.toLoad--img {
+    height: 90%;
+    width: 90%;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.toLoad--link {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
