@@ -15,6 +15,14 @@ const items: MenuProps['items'] = [
         label: 'Image',
         key: 'image',
     },
+    {
+        label: 'Log In',
+        key: 'login',
+    },
+    {
+        label: 'Sign Up',
+        key: 'signup',
+    },
 ];
 
 const Header: React.FC<{showMenu:Function}> = (props) => {

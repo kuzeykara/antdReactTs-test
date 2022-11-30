@@ -32,11 +32,11 @@ function Value() {
             </div>
             <div className="buttons">
                 <Space wrap className="buttons--operations">
-                    <Button type="primary" onClick={() => handleClick("add")}>Add 1!</Button>
-                    <Button type="primary" onClick={() => handleClick("sub")}>Subtract 1!</Button>
-                    <Button type="primary" onClick={() => handleClick("mul")}>Multiply by 2!</Button>
-                     <Button type="primary" onClick={() => handleClick("div")}>Divide by 2!</Button>
-                     <Button onClick={() => (console.log("Doing nothing!"))} >Do nothing.</Button>
+                    <Button type="primary" onClick={() => handleClick("add")}>Add 1</Button>
+                    <Button type="primary" onClick={() => handleClick("sub")}>Subtract 1</Button>
+                    <Button type="primary" onClick={() => handleClick("mul")}>Multiply by 2</Button>
+                    <Button type="primary" onClick={() => handleClick("div")}>Divide by 2</Button>
+                    <Button onClick={() => (console.log("Doing nothing!"))} >Do nothing.</Button>
                 </Space>
                 <Space wrap className="buttons--other">
                     <Button danger={true} onClick={() => handleClick("res")}>RESET</Button>

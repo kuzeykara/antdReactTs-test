@@ -1,39 +1,39 @@
 import { useState, useEffect } from 'react';
 import { Button } from 'antd';
 
+interface ImageData {
+    "total_results": number;
+    "page": number;
+    "per_page": number;
+    "photos": [
+        {
+          "id": number,
+          "width": number,
+          "height": number,
+          "url": string,
+          "photographer": string,
+          "photographer_url": string,
+          "photographer_id": number,
+          "avg_color": string,
+          "src": {
+            "original": string,
+            "large2x": string,
+            "large": string,
+            "medium": string,
+            "small": string,
+            "portrait": string,
+            "landscape": string,
+            "tiny": string
+          },
+          "liked": boolean,
+          "alt": string
+        }
+    ],
+      "next_page": string
+}
 function Image() {
-    interface Image {
-        "total_results": number;
-        "page": number;
-        "per_page": number;
-        "photos": [
-            {
-              "id": number,
-              "width": number,
-              "height": number,
-              "url": string,
-              "photographer": string,
-              "photographer_url": string,
-              "photographer_id": number,
-              "avg_color": string,
-              "src": {
-                "original": string,
-                "large2x": string,
-                "large": string,
-                "medium": string,
-                "small": string,
-                "portrait": string,
-                "landscape": string,
-                "tiny": string
-              },
-              "liked": boolean,
-              "alt": string
-            }
-        ],
-          "next_page": string
-    }
 
-    const [allImages, setAllImages] = useState({} as Image);
+    const [allImages, setAllImages] = useState<ImageData>({} as ImageData);
     const [theImage, setTheImage] = useState(
         {
             "original": "https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg",
@@ -51,19 +51,18 @@ function Image() {
         fetch("https://api.pexels.com/v1/search?query=nature", {
             method: 'GET',
             headers: {
-                // maybe hide this?
-                Authorization: "563492ad6f91700001000001ea826d5752da4918ac2086a81da34b1d"
-            } 
+                Authorization: process.env.REACT_APP_PEXELS_KEY as string
+            }
         })
         .then( (response) => response.json() )
-        .then( (json: Image) => setAllImages(json));
+        .then( (json: ImageData) => setAllImages(json));
 
         console.log("Request to API");
     }, []);
 
     function getRandomImage() {
         const randomNum = Math.floor(Math.random() * allImages.photos.length);
-        setTheImage( (allImages as Image).photos[randomNum].src );
+        setTheImage( (allImages as ImageData).photos[randomNum].src );
     }
 
     return(
