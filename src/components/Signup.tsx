@@ -53,7 +53,7 @@ function Signup() {
         }
 
         //post request to /users/signup
-        const res = await fetch("/users/signup", {
+        const res = await fetch("https://apiantdreactts-test.netlify.app/users/signup", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

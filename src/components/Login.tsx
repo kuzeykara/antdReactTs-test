@@ -35,7 +35,7 @@ function Login() {
     }
 
     async function onFinish() {
-        const res = await fetch("/users/login", {
+        const res = await fetch("https://apiantdreactts-test.netlify.app/users/login", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
